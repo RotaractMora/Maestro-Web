@@ -1931,11 +1931,90 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-@media screen and (min-width: 400px ?? max-width: 660px) {
+@media screen and (max-width :660px) {
 
   .direction-l .desc,
   .direction-r .desc {
     margin: 1em 4em 0 4em;
   }
 
+}
+
+/* krishantha css update */
+
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 30px auto;
+  width: 350px;
+  height: 300px;
+  border-radius: 30px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+  background-color: #040919;
+}
+
+/* .card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  background-color: #040919;
+} */
+
+/* .card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+} */
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  /* margin-top: 0px; */
+  height: 40px;
+  margin: 70px 50px 50px 50px ;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+#why-maestro h2{
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#why-maestro {
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
