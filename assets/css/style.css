@@ -1087,11 +1087,12 @@ h1, h2, h3, h4, h5, h6 {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #f82249;
+  border: 1px solid #9f805a;
+  ;
 }
 
 #gallery .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #f82249;
+  background-color: #9f805a;
 }
 
 #gallery .swiper-slide-active {
@@ -1103,11 +1104,11 @@ h1, h2, h3, h4, h5, h6 {
     padding: 40px 0;
   }
   #gallery .swiper-slide-active {
-    border: 5px solid #f82249;
+    border: 5px solid #9f805a;
     padding: 4px;
     background: #fff;
     z-index: 1;
-    transform: scale(1.15);
+    transform: scale(1.5);
     margin-top: 6px;
   }
 }
@@ -1955,41 +1956,63 @@ h1, h2, h3, h4, h5, h6 {
   width: 350px;
   height: 300px;
   border-radius: 30px;
-  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.158), -5px -5px 30px 7px rgba(0, 0, 0, 0.171);
   cursor: pointer;
   transition: 0.4s;
   background-color: #040919;
+  
+  
+  
 }
 
-/* .card .card_image {
+.card .card_image {
   width: inherit;
   height: inherit;
-  border-radius: 40px;
+  border-radius: 30px;
   background-color: #040919;
+  
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 30px;
+  object-fit: cover;
+  opacity: 0.2;
+  border: 5px solid #040919;
+
+}
+
+/* .imgoverly{
+  opacity: 0.2;
 } */
 
-/* .card .card_image img {
-  width: inherit;
-  height: inherit;
-  border-radius: 40px;
-  object-fit: cover;
-} */
+.card .card_image img::before {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.card .card_image img:hover {
+  transition: 1s;
+  border: 6px solid #9f805a;
+  opacity: 0.5;
+}
 
 .card .card_title {
   text-align: center;
   border-radius: 0px 0px 40px 40px;
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 20px;
-  /* margin-top: 0px; */
+  font-size: 22px;
+  margin-top: -200px;
   height: 40px;
-  margin: 70px 50px 50px 50px ;
+  margin: -250px 50px 50px 50px ;
+  opacity: 1;
 }
 
 .card:hover {
   transform: scale(0.9, 0.9);
-  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-    -5px -5px 30px 15px rgba(0,0,0,0.22);
+  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.158), 
+    -5px -5px 30px 15px rgba(0, 0, 0, 0.13);
 }
 
 .title-white {
