@@ -215,7 +215,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .buy-tickets:hover {
   background: none;
-  color: #fff;
+  color: #9f805a;
 }
 
 .buy-tickets:focus {
@@ -677,7 +677,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-desc{
   font-family: "Poppins", sans-serif;
-  font-weight: lighter;
+  font-weight: 300;
 }
 
 @media (min-width: 1024px) {
@@ -712,7 +712,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #about p {
-  font-size: 14px;
+  font-size: 17px;
   margin-bottom: 20px;
   color: #fff;
 }
@@ -854,12 +854,15 @@ h1, h2, h3, h4, h5, h6 {
   #schedule .nav-tabs a {
     padding: 8px 60px;
   }
+
 }
 
 @media (max-width: 767px) {
   #schedule .nav-tabs a {
     padding: 8px 50px;
   }
+
+
 }
 
 @media (max-width: 480px) {
@@ -1173,7 +1176,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   padding-left: 25px;
   cursor: pointer;
-  color: #e0072f;
+  color: #9f805a;
   transition: 0.3s;
 }
 
@@ -1198,7 +1201,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #faq .faq-list .collapsed:hover {
-  color: #f82249;
+  color: #9f805a;
 }
 
 #faq .faq-list .collapsed .icon-show {
@@ -1352,7 +1355,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #buy-tickets #buy-ticket-modal .btn:hover {
-  background-color: #e0072f;
+  background-color: #9f805a;
 }
 
 /*--------------------------------------------------------------
@@ -1371,7 +1374,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 48px;
   display: inline-block;
   margin-bottom: 10px;
-  color: #f82249;
+  color: #9f805a;
 }
 
 #contact .contact-info address, #contact .contact-info p {
@@ -1392,7 +1395,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #contact .contact-info a:hover {
-  color: #f82249;
+  color: #9f805a;
 }
 
 #contact .contact-address, #contact .contact-phone, #contact .contact-email {
@@ -1461,7 +1464,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #contact .php-email-form input:focus, #contact .php-email-form textarea:focus {
-  border-color: #f82249;
+  border-color: #9f805a;
 }
 
 #contact .php-email-form input {
@@ -1473,7 +1476,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #contact .php-email-form button[type="submit"] {
-  background: #f82249;
+  background: #9f805a;
   border: 0;
   padding: 10px 40px;
   color: #fff;
@@ -1483,7 +1486,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #contact .php-email-form button[type="submit"]:hover {
-  background: #e0072f;
+  background: #9f805a;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1534,7 +1537,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #footer .footer-top .footer-info img {
-  height: 40px;
+  height: 70px;
   margin-bottom: 10px;
 }
 
@@ -1567,7 +1570,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #f82249;
+  background: #9f805a;
   color: #fff;
 }
 
@@ -1578,7 +1581,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   position: relative;
   padding-bottom: 12px;
-  border-bottom: 2px solid #f82249;
+  border-bottom: 2px solid #9f805a;
 }
 
 #footer .footer-top .footer-links {
@@ -1593,7 +1596,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 5px;
-  color: #f82249;
+  color: #9f805a;
   font-size: 18px;
 }
 
@@ -1611,7 +1614,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: #f82249;
+  color: #9f805a;
 }
 
 #footer .footer-top .footer-contact {
@@ -1633,7 +1636,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #footer .footer-top .footer-newsletter input[type="submit"] {
-  background: #f82249;
+  background: #9f805a;
   border: 0;
   width: 35%;
   padding: 6px 0;
@@ -1644,7 +1647,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #footer .footer-top .footer-newsletter input[type="submit"]:hover {
-  background: #e0072f;
+  background: #9f805a;
 }
 
 #footer .copyright {
@@ -1714,6 +1717,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: right;
 }
 
+
 .direction-r {
   position: relative;
   width: 300px;
@@ -1733,7 +1737,7 @@ h1, h2, h3, h4, h5, h6 {
   background: rgb(248,248,248);
   padding: 6px 10px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   text-align: left;
 }
@@ -1767,7 +1771,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .direction-r .flag:before {
-  left: -38px;
+  left: -39px;
 }
 
 .direction-l .flag:after {
@@ -1853,6 +1857,7 @@ h1, h2, h3, h4, h5, h6 {
 
     text-align: center;
   }
+
 
   .flag-wrapper {
     text-align: center;
