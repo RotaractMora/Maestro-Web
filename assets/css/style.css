@@ -1948,92 +1948,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* krishantha css update */
 
-.cards-list {
-  z-index: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.card {
-  margin: 30px auto;
-  width: 350px;
-  height: 300px;
-  border-radius: 30px;
-  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.158), -5px -5px 30px 7px rgba(0, 0, 0, 0.171);
-  cursor: pointer;
-  transition: 0.4s;
-  background-color: #040919;
-  
-  
-  
-}
-
-.card .card_image {
-  width: inherit;
-  height: inherit;
-  border-radius: 30px;
-  background-color: #040919;
-  
-}
-
-.card .card_image img {
-  width: inherit;
-  height: inherit;
-  border-radius: 30px;
-  object-fit: cover;
-  opacity: 0.2;
-  border: 5px solid #040919;
-
-}
-
-/* .imgoverly{
-  opacity: 0.2;
-} */
-
-.card .card_image img::before {
-  color: rgba(0, 0, 0, 0.2);
-}
-
-.card .card_image img:hover {
-  transition: 1s;
-  border: 6px solid #9f805a;
-  opacity: 0.5;
-}
-
-.card .card_title {
-  text-align: center;
-  border-radius: 0px 0px 40px 40px;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 22px;
-  margin-top: -200px;
-  height: 40px;
-  margin: -250px 50px 50px 50px ;
-  opacity: 1;
-}
-
-.card:hover {
-  transform: scale(0.9, 0.9);
-  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.158), 
-    -5px -5px 30px 15px rgba(0, 0, 0, 0.13);
-}
-
-.title-white {
-  color: white;
-}
-
-.title-black {
-  color: black;
-}
-
-@media all and (max-width: 500px) {
-  .card-list {
-    /* On small screens, we are no longer using row direction but column */
-    flex-direction: column;
-  }
-}
 
 #why-maestro h2{
     font-size: 36px;
@@ -2044,5 +1958,59 @@ h1, h2, h3, h4, h5, h6 {
 
 #why-maestro {
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 0px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.why-maestro{
+  padding: 50px;
+}
+
+.horizontal-list {
+  list-style-type: none;
+  text-align: center;
+  margin-bottom: 1.3rem;   
+  padding: 10px;
+  
+  background-color:#0409193b;
+  padding: 0;
+  margin-left: 1em;
+  
+  @media (min-width:600px) {
+    display: flex;
+    justify-content:space-between; 
+  }
+}
+
+.horizontal-list-item {
+    width: 100%;
+    position: relative;
+    margin-bottom: .5rem;
+    font-size: larger;
+    font-weight: 400;
+    padding: 2px;
+    background-color: white;
+    margin: 1px 0 0 0;
+    padding: 10px;
+    list-style-type: none;
+}
+
+/* .horizontal-list-item:before {
+        content: "✔️";
+        padding-right:0.5rem;
+        
+} */
+
+.horizontal-list-item:hover{
+  transition: .5s;
+  
+  cursor: pointer;
+  
+  color: #9f805a;
+  /* border: 2px solid #9f805a;
+  border-radius: 50px; */
 }
