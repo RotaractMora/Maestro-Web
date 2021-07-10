@@ -29,7 +29,7 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
-<body>
+<body class="registration-form-body">
 
 <header class="d-flex align-items-center " id="header">
     <div class="container-fluid container-xxl d-flex align-items-center lheader">
@@ -80,7 +80,7 @@
 <main>
 
     <!-- ======= Registration Section ======= -->
-    <section class="section-bg" id="contact" style="margin-top: 50px">
+    <section class="section-bg" id="contact" style="margin-top: 100px">
 
         <div class="container" data-aos="fade-up">
 
@@ -118,7 +118,8 @@
             </div> -->
 
             <div class="form">
-                <form action="forms/contact.php" class="php-email-form" method="post" role="form">
+                <form action="/forms/contact.php" class="php-email-form" method="post" role="form">
+                    <h4 class="registration-form-label registration-form-member">Team information</h4>
                     <div class="row registration-form-row">
                         <div class="form-group col-md-6">
                             <h6 class="registration-form-label">Name of the University / Educational Institute / Rotaract Club</h6>
@@ -127,31 +128,133 @@
                         </div>
                         <div class="form-group col-md-6 mt-3 mt-md-0">
                             <h6 class="registration-form-label">Team name</h6>
-                            <input class="form-control" id="team-name" name="team-name" placeholder="team name" required
+                            <input class="form-control" id="team-name" name="team-name" placeholder="Team name" required
                                    type="text">
                         </div>
                     </div>
                     <div class="row registration-form-row">
                         <div class="form-group col-md-6">
                             <h6 class="registration-form-label">Number of team members</h6>
-                            <input class="form-control" id="team-count" name="team-count" placeholder="Number of team members" required
-                                   type="number">
+<!--                            <input class="form-control" id="team-count" name="team-count" placeholder="Number of team members" required-->
+<!--                                   type="number">-->
+                            <select aria-label="Default select example" class="form-select" required>
+                                <option value="3">Three</option>
+                                <option value="4">Four</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="form-group mt-3">
-                        <input class="form-control" id="subject" name="subject" placeholder="Subject" required
-                               type="text">
+
+                    <h5 class="registration-form-label registration-form-member">Team member 1 (Captain)</h5>
+                    <div class="row registration-form-row">
+                        <div class="form-group col-md-6">
+                            <h6 class="registration-form-label">Full Name</h6>
+                            <input class="form-control" id="mem-1-name" name="mem-1-name" placeholder="eg :- A.D. John Doe" required
+                                   type="text">
+                        </div>
+                        <div class="form-group col-md-6 mt-3 mt-md-0">
+                            <h6 class="registration-form-label">Age</h6>
+                            <input class="form-control" id="mem-1-age" max="26" min="18" name="mem-1-age"
+                                   placeholder="Age" required type="number">
+                        </div>
                     </div>
-                    <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" placeholder="Message" required
-                                  rows="5"></textarea>
+                    <div class="row registration-form-row">
+                        <div class="form-group col-md-6">
+                            <h6 class="registration-form-label">Email Address</h6>
+                            <input class="form-control" id="mem-1-email" name="mem-1-email" placeholder="Email Address" required
+                                   type="email">
+                        </div>
+                        <div class="form-group col-md-6 mt-3 mt-md-0">
+                            <h6 class="registration-form-label">Mobile Number</h6>
+                            <input class="form-control" id="mem-1-mob" maxlength="12" minlength="12" name="mem-1-mob"
+                                   placeholder="eg :- +9412345678912" required type="text">
+                        </div>
                     </div>
+
+
+                    <h5 class="registration-form-label registration-form-member">Team member 2</h5>
+                    <div class="row registration-form-row">
+                        <div class="form-group col-md-6">
+                            <h6 class="registration-form-label">Full Name</h6>
+                            <input class="form-control" id="mem-2-name" name="mem-2-name" placeholder="eg :- A.D. John Doe" required
+                                   type="text">
+                        </div>
+                        <div class="form-group col-md-6 mt-3 mt-md-0">
+                            <h6 class="registration-form-label">Age</h6>
+                            <input class="form-control" id="mem-2-age" max="26" min="18" name="mem-2-age"
+                                   placeholder="Age" required type="number">
+                        </div>
+                    </div>
+                    <div class="row registration-form-row">
+                        <div class="form-group col-md-6">
+                            <h6 class="registration-form-label">Email Address</h6>
+                            <input class="form-control" id="mem-2-email" name="mem-2-email" placeholder="Email Address" required
+                                   type="email">
+                        </div>
+                        <div class="form-group col-md-6 mt-3 mt-md-0">
+                            <h6 class="registration-form-label">Mobile Number</h6>
+                            <input class="form-control" id="mem-2-mob" maxlength="12" minlength="12" name="mem-2-mob"
+                                   placeholder="eg :- +9412345678912" required type="text">
+                        </div>
+                    </div>
+
+                    <h5 class="registration-form-label registration-form-member">Team member 3 </h5>
+                    <div class="row registration-form-row">
+                        <div class="form-group col-md-6">
+                            <h6 class="registration-form-label">Full Name</h6>
+                            <input class="form-control" id="mem-3-name" name="mem-3-name" placeholder="eg :- A.D. John Doe" required
+                                   type="text">
+                        </div>
+                        <div class="form-group col-md-6 mt-3 mt-md-0">
+                            <h6 class="registration-form-label">Age</h6>
+                            <input class="form-control" id="mem-3-age" max="26" min="18" name="mem-3-age"
+                                   placeholder="Age" required type="number">
+                        </div>
+                    </div>
+                    <div class="row registration-form-row">
+                        <div class="form-group col-md-6">
+                            <h6 class="registration-form-label">Email Address</h6>
+                            <input class="form-control" id="mem-3-email" name="mem-3-email" placeholder="Email Address" required
+                                   type="email">
+                        </div>
+                        <div class="form-group col-md-6 mt-3 mt-md-0">
+                            <h6 class="registration-form-label">Mobile Number</h6>
+                            <input class="form-control" id="mem-3-mob" maxlength="12" minlength="12" name="mem-3-mob"
+                                   placeholder="eg :- +9412345678912" required type="text">
+                        </div>
+                    </div>
+
+                    <h5 class="registration-form-label registration-form-member">Team member 4 </h5>
+                    <div class="row registration-form-row">
+                        <div class="form-group col-md-6">
+                            <h6 class="registration-form-label">Full Name</h6>
+                            <input class="form-control" id="mem-4-name" name="mem-4-name" placeholder="eg :- A.D. John Doe" required
+                                   type="text">
+                        </div>
+                        <div class="form-group col-md-6 mt-3 mt-md-0">
+                            <h6 class="registration-form-label">Age</h6>
+                            <input class="form-control" id="mem-4-age" max="26" min="18" name="mem-4-age"
+                                   placeholder="Age" required type="number">
+                        </div>
+                    </div>
+                    <div class="row registration-form-row">
+                        <div class="form-group col-md-6">
+                            <h6 class="registration-form-label">Email Address</h6>
+                            <input class="form-control" id="mem-4-email" name="mem-4-email" placeholder="Email Address" required
+                                   type="email">
+                        </div>
+                        <div class="form-group col-md-6 mt-3 mt-md-0">
+                            <h6 class="registration-form-label">Mobile Number</h6>
+                            <input class="form-control" id="mem-4-mob" maxlength="12" minlength="12" name="mem-4-mob"
+                                   placeholder="eg :- +9412345678912" required type="text">
+                        </div>
+                    </div>
+
                     <div class="my-3">
                         <div class="loading">Loading</div>
                         <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                        <div class="sent-message">The form has been submitted. Thank you!</div>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center" style="margin-top: 60px">
                         <button type="submit">Submit</button>
                     </div>
                 </form>

@@ -2014,3 +2014,19 @@ h1 {
   /* border: 2px solid #9f805a;
   border-radius: 50px; */
 }
+
+
+/*      Registration Form CSS Rules     */
+
+.registration-form-body{
+  font-family: "Poppins", sans-serif;
+}
+
+.registration-form-row {
+  margin-top: 20px;
+}
+
+.registration-form-member{
+  margin-top: 80px;
+  font-weight: 600;
+}
