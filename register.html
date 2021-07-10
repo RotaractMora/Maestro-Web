@@ -118,7 +118,7 @@
             </div> -->
 
             <div class="form">
-                <form action="/forms/contact.php" class="php-email-form" method="post" role="form">
+                <form class="php-email-form" id="registration-form" method="post" role="form">
                     <h4 class="registration-form-label registration-form-member">Team information</h4>
                     <div class="row registration-form-row">
                         <div class="form-group col-md-6">
@@ -137,7 +137,7 @@
                             <h6 class="registration-form-label">Number of team members</h6>
 <!--                            <input class="form-control" id="team-count" name="team-count" placeholder="Number of team members" required-->
 <!--                                   type="number">-->
-                            <select aria-label="Default select example" class="form-select" required>
+                            <select aria-label="Default select example" class="form-select" id="members" required>
                                 <option value="3">Three</option>
                                 <option value="4">Four</option>
                             </select>
@@ -148,7 +148,7 @@
                     <div class="row registration-form-row">
                         <div class="form-group col-md-6">
                             <h6 class="registration-form-label">Full Name</h6>
-                            <input class="form-control" id="mem-1-name" name="mem-1-name" placeholder="eg :- A.D. John Doe" required
+                            <input class="form-control" id="mem-1-name" name="mem-1-name" placeholder="eg : A.D. John Doe" required
                                    type="text">
                         </div>
                         <div class="form-group col-md-6 mt-3 mt-md-0">
@@ -166,7 +166,7 @@
                         <div class="form-group col-md-6 mt-3 mt-md-0">
                             <h6 class="registration-form-label">Mobile Number</h6>
                             <input class="form-control" id="mem-1-mob" maxlength="12" minlength="12" name="mem-1-mob"
-                                   placeholder="eg :- +9412345678912" required type="text">
+                                   placeholder="eg : +9412345678912" required type="text">
                         </div>
                     </div>
 
@@ -175,7 +175,7 @@
                     <div class="row registration-form-row">
                         <div class="form-group col-md-6">
                             <h6 class="registration-form-label">Full Name</h6>
-                            <input class="form-control" id="mem-2-name" name="mem-2-name" placeholder="eg :- A.D. John Doe" required
+                            <input class="form-control" id="mem-2-name" name="mem-2-name" placeholder="eg : A.D. John Doe" required
                                    type="text">
                         </div>
                         <div class="form-group col-md-6 mt-3 mt-md-0">
@@ -193,7 +193,7 @@
                         <div class="form-group col-md-6 mt-3 mt-md-0">
                             <h6 class="registration-form-label">Mobile Number</h6>
                             <input class="form-control" id="mem-2-mob" maxlength="12" minlength="12" name="mem-2-mob"
-                                   placeholder="eg :- +9412345678912" required type="text">
+                                   placeholder="eg : +9412345678912" required type="text">
                         </div>
                     </div>
 
@@ -201,7 +201,7 @@
                     <div class="row registration-form-row">
                         <div class="form-group col-md-6">
                             <h6 class="registration-form-label">Full Name</h6>
-                            <input class="form-control" id="mem-3-name" name="mem-3-name" placeholder="eg :- A.D. John Doe" required
+                            <input class="form-control" id="mem-3-name" name="mem-3-name" placeholder="eg : A.D. John Doe" required
                                    type="text">
                         </div>
                         <div class="form-group col-md-6 mt-3 mt-md-0">
@@ -219,7 +219,7 @@
                         <div class="form-group col-md-6 mt-3 mt-md-0">
                             <h6 class="registration-form-label">Mobile Number</h6>
                             <input class="form-control" id="mem-3-mob" maxlength="12" minlength="12" name="mem-3-mob"
-                                   placeholder="eg :- +9412345678912" required type="text">
+                                   placeholder="eg : +9412345678912" required type="text">
                         </div>
                     </div>
 
@@ -227,7 +227,7 @@
                     <div class="row registration-form-row">
                         <div class="form-group col-md-6">
                             <h6 class="registration-form-label">Full Name</h6>
-                            <input class="form-control" id="mem-4-name" name="mem-4-name" placeholder="eg :- A.D. John Doe" required
+                            <input class="form-control" id="mem-4-name" name="mem-4-name" placeholder="eg : A.D. John Doe"
                                    type="text">
                         </div>
                         <div class="form-group col-md-6 mt-3 mt-md-0">
@@ -239,23 +239,23 @@
                     <div class="row registration-form-row">
                         <div class="form-group col-md-6">
                             <h6 class="registration-form-label">Email Address</h6>
-                            <input class="form-control" id="mem-4-email" name="mem-4-email" placeholder="Email Address" required
+                            <input class="form-control" id="mem-4-email" name="mem-4-email" placeholder="Email Address"
                                    type="email">
                         </div>
                         <div class="form-group col-md-6 mt-3 mt-md-0">
                             <h6 class="registration-form-label">Mobile Number</h6>
                             <input class="form-control" id="mem-4-mob" maxlength="12" minlength="12" name="mem-4-mob"
-                                   placeholder="eg :- +9412345678912" required type="text">
+                                   placeholder="eg : +9412345678912"  type="text">
                         </div>
                     </div>
 
                     <div class="my-3">
                         <div class="loading">Loading</div>
                         <div class="error-message"></div>
-                        <div class="sent-message">The form has been submitted. Thank you!</div>
+                        <div class="sent-message">Your registration details have been submitted. Thank you!</div>
                     </div>
                     <div class="text-center" style="margin-top: 60px">
-                        <button type="submit">Submit</button>
+                        <button id="submit" type="submit">Submit</button>
                     </div>
                 </form>
             </div>
@@ -340,6 +340,11 @@
     </div>
 </footer><!-- End  Footer -->
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+
+
 <a class="back-to-top d-flex align-items-center justify-content-center" href="#"><i class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
@@ -351,7 +356,7 @@
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
-
+<script src="assets/js/register.js"></script>
 
 </body>
 </html>
