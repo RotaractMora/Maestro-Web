@@ -2030,3 +2030,93 @@ h1 {
   margin-top: 80px;
   font-weight: 600;
 }
+
+/*  - guidlines */
+
+#guidlines{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+#guidlines p{
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-top: -30px;
+}
+
+@media screen and (max-width: 660px){
+  #guidlines p{
+    padding-bottom: 50px;
+  }
+  #guidlines{
+    padding: 50px 0px 50px 0px;
+  }
+}
+
+
+.wrapper{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 150px;
+}
+
+.link_wrapper{
+  position: relative;
+}
+
+.link_wrapper a{
+  display: block;
+  width: 400px;
+  height: 60px;
+  /* line-height: 50px; */
+  font-weight: bold;
+  text-decoration: none;
+  background: #112363;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  border: 12px solid #112363;
+  border-radius: 50px;
+  transition: all .35s;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.icon{
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .35s;
+}
+
+.icon svg{
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: #9f805a;
+  transition: all .35s;
+}
+
+.link_wrapper a:hover{
+  width: 350px;
+  border: 3px solid #9f805a;
+  background: transparent;
+  color: #9f805a;
+}
+
+.link_wrapper a:hover + .icon{
+  border: 3px solid #9f805a;
+  right: -25%;
+}
