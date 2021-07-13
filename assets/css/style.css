@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   overflow: visible;
-  background: #fff url("../img/preloader.svg") no-repeat center center;
+  /*background: #fff url("../img/preloader.svg") no-repeat center center;*/
 }
 
 /*--------------------------------------------------------------
@@ -1418,7 +1418,7 @@ h1, h2, h3, h4, h5, h6 {
 #contact .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #ed3c0d;
+  background: #933a41;
   text-align: left;
   padding: 15px;
   font-weight: 600;
@@ -1451,7 +1451,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
+  border: 3px solid #9f805a;
   border-top-color: #eee;
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
@@ -1973,14 +1973,16 @@ h1 {
 .horizontal-list {
   list-style-type: none;
   text-align: center;
-  margin-bottom: 1.3rem;   
+  margin-bottom: 1.3rem;
   padding: 10px;
-  
-  background-color:#05134169;
-  padding: 5;
+
+  background-color: #05134169;
+  padding: 5px;
   margin-left: 1em;
+}
   
   @media (min-width:600px) {
+  {
     display: flex;
     justify-content:space-between; 
   }
@@ -2019,7 +2021,7 @@ h1 {
 /*      Registration Form CSS Rules     */
 
 .registration-form-body{
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif
 }
 
 .registration-form-row {
@@ -2032,7 +2034,7 @@ h1 {
 }
 
 
-/*  - guidlines */
+/*  - guidelines */
 
 #guidlines{
   padding-top: 100px;

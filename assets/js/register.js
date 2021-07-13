@@ -20,6 +20,10 @@ let subButton = document.getElementById('submit')
 subButton.addEventListener("click",ev =>{
     ev.preventDefault()
 
+    document.getElementById("loading").style.display = 'block';
+    document.getElementById("error-message").style.display = 'none';
+
+
     //get form data
     let institute = document.getElementById('institute-name').value
     let team_name = document.getElementById('team-name').value
@@ -45,74 +49,44 @@ subButton.addEventListener("click",ev =>{
     let mem_4_email = document.getElementById('mem-4-email').value
     let mem_4_phone = document.getElementById('mem-4-mob').value
 
-    console.log(institute,
-        team_name,
-        members,
-        mem_1_name,
-        mem_1_age,
-        mem_1_email,
-        mem_1_phone,
-        mem_2_name,
-        mem_2_age,
-        mem_2_email,
-        mem_2_phone,
-        mem_3_name,
-        mem_3_age,
-        mem_3_email,
-        mem_3_phone,
-        mem_4_name,
-        mem_4_age,
-        mem_4_email,
-        mem_4_phone)
     //save data to firestore
-    db.doc().set({
-        institute:institute,
-        team_name:team_name,
-        members:members,
-        mem_1_name:mem_1_name,
-        mem_1_age:mem_1_age,
-        mem_1_email:mem_1_email,
-        mem_1_phone:mem_1_phone,
-        mem_2_name:mem_2_name,
-        mem_2_age:mem_2_age,
-        mem_2_email:mem_2_email,
-        mem_2_phone:mem_2_phone,
-        mem_3_name:mem_3_name,
-        mem_3_age:mem_3_age,
-        mem_3_email:mem_3_email,
-        mem_3_phone:mem_3_phone,
-        mem_4_name:mem_4_name,
-        mem_4_age:mem_4_age,
-        mem_4_email:mem_4_email,
-        mem_4_phone:mem_4_phone
+    if (document.getElementById('registration-form').checkValidity()) {
+        db.doc().set({
+            institute: institute,
+            team_name: team_name,
+            members: members,
+            mem_1_name: mem_1_name,
+            mem_1_age: mem_1_age,
+            mem_1_email: mem_1_email,
+            mem_1_phone: mem_1_phone,
+            mem_2_name: mem_2_name,
+            mem_2_age: mem_2_age,
+            mem_2_email: mem_2_email,
+            mem_2_phone: mem_2_phone,
+            mem_3_name: mem_3_name,
+            mem_3_age: mem_3_age,
+            mem_3_email: mem_3_email,
+            mem_3_phone: mem_3_phone,
+            mem_4_name: mem_4_name,
+            mem_4_age: mem_4_age,
+            mem_4_email: mem_4_email,
+            mem_4_phone: mem_4_phone
 
-    }).then( () => {
-        console.log("data saved")
-        document.querySelector('.sent-message').style.display = 'block';
-        document.getElementById('registration-form').reset();
+        }).then(() => {
+            document.getElementById("loading").style.display = 'none';
+            console.log("data saved")
+            document.querySelector('.sent-message').style.display = 'block';
+            document.getElementById('registration-form').reset();
 
-    }).catch((error)=> {
-        console.log(error,institute,
-        team_name,
-        members,
-        mem_1_name,
-        mem_1_age,
-        mem_1_email,
-        mem_1_phone,
-        mem_2_name,
-        mem_2_age,
-        mem_2_email,
-        mem_2_phone,
-        mem_3_name,
-        mem_3_age,
-        mem_3_email,
-        mem_3_phone,
-        mem_4_name,
-        mem_4_age,
-        mem_4_email,
-        mem_4_phone)
-
-    })
+        }).catch((error) => {
+            console.log(error)
+        })
+    }else{
+        document.getElementById('registration-form').reportValidity()
+        console.log("ïnvalid data")
+        document.getElementById("loading").style.display = 'none';
+        document.getElementById("error-message").style.display = 'block';
+    }
 })
 
 
@@ -138,4 +112,11 @@ function addRequired(id){
 }
 function removeRequired(id){
     document.getElementById(id).removeAttribute("required");
+}
+
+console.log(document.getElementById('registration-form').checkValidity())
+
+
+function checkValidity(){
+    document.getElementById('registration-form').checkValidity()
 }
