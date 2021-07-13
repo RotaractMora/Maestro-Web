@@ -22,6 +22,8 @@ subButton.addEventListener("click",ev =>{
 
     document.getElementById("loading").style.display = 'block';
     document.getElementById("error-message").style.display = 'none';
+    document.getElementById("error-message").innerHTML = "";
+
 
 
     //get form data
@@ -77,32 +79,46 @@ subButton.addEventListener("click",ev =>{
             console.log("data saved")
             document.querySelector('.sent-message').style.display = 'block';
             document.getElementById('registration-form').reset();
+            setTimeout(function(){
+                window.location.href = '../../../Maestro_temp/index.html';
+            }, 5000);
 
         }).catch((error) => {
             console.log(error)
+            document.getElementById("error-message").style.display = 'block';
+            document.getElementById("error-message").innerHTML = "Sorry your form was not submitted";
+
+
         })
     }else{
         document.getElementById('registration-form').reportValidity()
-        console.log("ïnvalid data")
+        console.log("invalid data")
         document.getElementById("loading").style.display = 'none';
-        document.getElementById("error-message").style.display = 'block';
+        // document.getElementById("error-message").style.display = 'block';
     }
 })
 
 
 document.getElementById('members').addEventListener('change',(e)=>{
-    console.log(document.getElementById('members').value)
     if (document.getElementById('members').value == 4 ){
         console.log("running")
         addRequired("mem-4-name")
         addRequired("mem-4-age")
         addRequired("mem-4-email")
         addRequired("mem-4-mob")
+        enableInputField("mem-4-name")
+        enableInputField("mem-4-age")
+        enableInputField("mem-4-email")
+        enableInputField("mem-4-mob")
     }else {
         removeRequired("mem-4-name")
         removeRequired("mem-4-age")
         removeRequired("mem-4-email")
         removeRequired("mem-4-mob")
+        disableInputField("mem-4-name")
+        disableInputField("mem-4-age")
+        disableInputField("mem-4-email")
+        disableInputField("mem-4-mob")
     }
 })
 
@@ -114,7 +130,12 @@ function removeRequired(id){
     document.getElementById(id).removeAttribute("required");
 }
 
-console.log(document.getElementById('registration-form').checkValidity())
+function disableInputField(id) {
+    document.getElementById(id).disabled = true
+}
+function enableInputField(id) {
+    document.getElementById(id).disabled = false
+}
 
 
 function checkValidity(){

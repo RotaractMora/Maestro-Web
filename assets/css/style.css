@@ -1421,17 +1421,28 @@ h1, h2, h3, h4, h5, h6 {
   background: #933a41;
   text-align: left;
   padding: 15px;
-  font-weight: 600;
+  font-weight: normal;
 }
 
 #contact .php-email-form .error-message br + br {
   margin-top: 25px;
 }
+#contact .php-email-form .required {
+  display: block;
+  color: #222636;
+  text-align: left;
+  padding: 0;
+  font-weight: normal;
+  font-size: 10px;
+}
+
+#contact .php-email-form .required br + br {
+  margin-top: 5px;
+}
 
 #contact .php-email-form .sent-message {
   display: none;
-  color: #fff;
-  background: #222636;
+  color: #222636;
   text-align: center;
   padding: 15px;
   font-weight: 600;
