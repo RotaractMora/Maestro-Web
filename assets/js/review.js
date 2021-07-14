@@ -34,7 +34,7 @@ function createCard(teamName, institute, members, mem1name, mem1age, mem1email, 
 <div class="card">
                 <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
-                        <button class="btn btn-link title-card" type="button" onclick="showCollapse(this)" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">${teamName}</button>
+                        <button class="btn btn-link title-card" type="button" onclick="showCollapse(this)" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color: rgb(7,24,85); text-transform: uppercase; text-decoration: none; ">${teamName}</button>
                     </h5>
                 </div>
 
@@ -42,41 +42,41 @@ function createCard(teamName, institute, members, mem1name, mem1age, mem1email, 
                     <div class="card-body">
                         <h3>Basic info</h3>
                         <div class="row details-row">
-                            <div class="col-sm">${teamName}</div>
-                            <div class="col-sm">${institute}</div>
-                            <div class="col-sm">${members}</div>
+                            <div class="col-sm"><strong>Team name :</strong> ${teamName}</div>
+                            <div class="col-sm"><strong>Institute :</strong> ${institute}</div>
+                            <div class="col-sm"><strong>No. of team members :</strong> ${members}</div>
                         </div>
 
                         <h5>Team Captain</h5>
                         <div class="row details-row">
-                            <div class="col-sm">${mem1name}</div>
-                            <div class="col-sm">${mem1age}</div>
-                            <div class="col-sm">${mem1email}</div>
-                            <div class="col-sm">${mem1mob}</div>
+                            <div class="col-sm"><strong>Name :</strong> ${mem1name}</div>
+                            <div class="col-sm"><strong>Age :</strong> ${mem1age}</div>
+                            <div class="col-sm"><strong>Email :</strong> ${mem1email}</div>
+                            <div class="col-sm"><strong>Mobile number :</strong> ${mem1mob}</div>
                         </div>
 
                         <h5>Team member 2</h5>
                         <div class="row details-row">
-                            <div class="col-sm">${mem2name}</div>
-                            <div class="col-sm">${mem2age}</div>
-                            <div class="col-sm">${mem2email}</div>
-                            <div class="col-sm">${mem2mob}</div>
+                            <div class="col-sm"><strong>Name :</strong> ${mem2name}</div>
+                            <div class="col-sm"><strong>Age :</strong> ${mem2age}</div>
+                            <div class="col-sm"><strong>Email :</strong> ${mem2email}</div>
+                            <div class="col-sm"><strong>Mobile number :</strong> ${mem2mob}</div>
                         </div>
 
                         <h5>Team member 3</h5>
                         <div class="row details-row">
-                            <div class="col-sm">${mem3name}</div>
-                            <div class="col-sm">${mem3age}</div>
-                            <div class="col-sm">${mem3email}</div>
-                            <div class="col-sm">${mem3mob}</div>
+                            <div class="col-sm"><strong>Name :</strong> ${mem3name}</div>
+                            <div class="col-sm"><strong>Age :</strong> ${mem3age}</div>
+                            <div class="col-sm"><strong>Email :</strong> ${mem3email}</div>
+                            <div class="col-sm"><strong>Mobile number :</strong> ${mem3mob}</div>
                         </div>
 
                         <h5>Team member 4</h5>
                         <div class="row details-row">
-                            <div class="col-sm">${mem4name}</div>
-                            <div class="col-sm">${mem4age}</div>
-                            <div class="col-sm">${mem4email}</div>
-                            <div class="col-sm">${mem4mob}</div>
+                            <div class="col-sm"><strong>Name :</strong> ${mem4name}</div>
+                            <div class="col-sm"><strong>Age :</strong> ${mem4age}</div>
+                            <div class="col-sm"><strong>Email :</strong> ${mem4email}</div>
+                            <div class="col-sm"><strong>Mobile number :</strong> ${mem4mob}</div>
                         </div>
                     </div>
                 </div>
