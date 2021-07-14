@@ -362,7 +362,7 @@ h1, h2, h3, h4, h5, h6 {
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: rgb(5, 45, 79);
+  color: rgb(159, 128, 90);
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -470,11 +470,21 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url(../img/bg/sean-pollock-PhYq704ffdA-unsplash.jpg) top center;
+  /*background: url(../img/bg/sean-pollock-PhYq704ffdA-unsplash.jpg) top center;*/
   background-size: cover;
   overflow: hidden;
   position: relative;
 }
+
+.hero-video{
+  position: fixed;
+  min-height: 100vh;
+  min-width: 100vw;
+  object-fit: cover;
+  overflow: hidden;
+  z-index: -5;
+}
+
 
 @media (min-width: 1024px) {
   #hero {
@@ -484,7 +494,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -1081,7 +1091,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #gallery .swiper-pagination {
-  margin-top: 20px;
+  margin-top: 40px;
   position: relative;
 }
 
@@ -2083,7 +2093,7 @@ h1 {
 
 .link_wrapper a{
   display: block;
-  width: 400px;
+  width: 350px;
   height: 60px;
   /* line-height: 50px; */
   font-weight: bold;
@@ -2133,4 +2143,40 @@ h1 {
 .link_wrapper a:hover + .icon{
   border: 3px solid #9f805a;
   right: -25%;
+}
+
+
+
+/*test*/
+ul#countdown {
+  position: relative;
+  width: 50%;
+  margin: 0 auto 20px;
+  padding: 15px 0 20px 0;
+  color: #052d4f;
+  overflow: hidden;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+}
+ul#countdown li {
+  margin: 0 -3px 0 0;
+  padding: 0;
+  display: inline-block;
+  width: 25%;
+  font-size: 60px;
+  text-align: center;
+}
+ul#countdown li .label {
+  color: #adafb2;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 660px){
+  ul#countdown{
+    width: 85%;
+  }
+  ul#countdown li{
+    font-size: 40px;
+  }
 }
