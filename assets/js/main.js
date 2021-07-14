@@ -1,325 +1,379 @@
 /**
-* Template Name: TheEvent - v4.3.0
-* Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-(function() {
-  "use strict";
+ * Template Name: TheEvent - v4.3.0
+ * Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+ * Author: BootstrapMade.com
+ * License: https://bootstrapmade.com/license/
+ */
 
-  /**
-   * Easy selector helper function
-   */
-  const select = (el, all = false) => {
-    el = el.trim()
-    if (all) {
-      return [...document.querySelectorAll(el)]
-    } else {
-      return document.querySelector(el)
-    }
-  }
 
-  /**
-   * Easy event listener function
-   */
-  const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
-    if (selectEl) {
-      if (all) {
-        selectEl.forEach(e => e.addEventListener(type, listener))
-      } else {
-        selectEl.addEventListener(type, listener)
-      }
-    }
-  }
+(function () {
 
-  /**
-   * Easy on scroll event listener 
-   */
-  const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
-  }
+    var firebaseConfig = {
+        apiKey: "AIzaSyAscGIgvh8t4TBEsaxyjeLWpyYaha90HGI",
+        authDomain: "maestrotest-e1684.firebaseapp.com",
+        projectId: "maestrotest-e1684",
+        storageBucket: "maestrotest-e1684.appspot.com",
+        messagingSenderId: "1075019959077",
+        appId: "1:1075019959077:web:955ed58fa689105763e8cc"
+    };
+// Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var firestore = firebase.firestore()
 
-  /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select('#navbar .scrollto', true)
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200
-    navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
-      } else {
-        navbarlink.classList.remove('active')
-      }
+    console.log("done")
+//access database
+    const db = firestore.collection("messages");
+    let sendBtn = document.getElementById('sendMsg');
+
+    sendBtn.addEventListener("click",e=>{
+        console.log("done")
+        e.preventDefault()
+        document.getElementById("loading").style.display = "block";
+        document.getElementById("msgSent").style.display = "none";
+        let data = {
+            name: "",
+            email: "",
+            subject: "",
+            message: ""
+        }
+
+        data.name = document.getElementById("name").value
+        data.email = document.getElementById("email").value
+        data.message = document.getElementById("message").value
+        data.subject = document.getElementById("subject").value
+        console.log(data)
+        console.log(document.getElementById("name").value)
+
+        if (document.getElementById("msgForm").checkValidity()){
+            db.doc().set(data).then(()=>{
+                document.getElementById("loading").style.display = "none";
+                document.getElementById("msgSent").style.display = "block";
+                console.log("done 2")
+
+            }).catch((e)=>{
+                console.log(e)
+            })
+        }else{
+            document.getElementById("loading").style.display = "none";
+        }
     })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
 
-  /**
-   * Scrolls to an element with header offset
-   */
-  const scrollto = (el) => {
-    let header = select('#header')
-    let offset = header.offsetHeight
+    "use strict";
 
-    if (!header.classList.contains('header-scrolled')) {
-      offset -= 20
+    /**
+     * Easy selector helper function
+     */
+    const select = (el, all = false) => {
+        el = el.trim()
+        if (all) {
+            return [...document.querySelectorAll(el)]
+        } else {
+            return document.querySelector(el)
+        }
     }
 
-    let elementPos = select(el).offsetTop
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: 'smooth'
+    /**
+     * Easy event listener function
+     */
+    const on = (type, el, listener, all = false) => {
+        let selectEl = select(el, all)
+        if (selectEl) {
+            if (all) {
+                selectEl.forEach(e => e.addEventListener(type, listener))
+            } else {
+                selectEl.addEventListener(type, listener)
+            }
+        }
+    }
+
+    /**
+     * Easy on scroll event listener
+     */
+    const onscroll = (el, listener) => {
+        el.addEventListener('scroll', listener)
+    }
+
+    /**
+     * Navbar links active state on scroll
+     */
+    let navbarlinks = select('#navbar .scrollto', true)
+    const navbarlinksActive = () => {
+        let position = window.scrollY + 200
+        navbarlinks.forEach(navbarlink => {
+            if (!navbarlink.hash) return
+            let section = select(navbarlink.hash)
+            if (!section) return
+            if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+                navbarlink.classList.add('active')
+            } else {
+                navbarlink.classList.remove('active')
+            }
+        })
+    }
+    window.addEventListener('load', navbarlinksActive)
+    onscroll(document, navbarlinksActive)
+
+    /**
+     * Scrolls to an element with header offset
+     */
+    const scrollto = (el) => {
+        let header = select('#header')
+        let offset = header.offsetHeight
+
+        if (!header.classList.contains('header-scrolled')) {
+            offset -= 20
+        }
+
+        let elementPos = select(el).offsetTop
+        window.scrollTo({
+            top: elementPos - offset,
+            behavior: 'smooth'
+        })
+    }
+
+    /**
+     * Toggle .header-scrolled class to #header when page is scrolled
+     */
+    let selectHeader = select('#header')
+    if (selectHeader) {
+        const headerScrolled = () => {
+            if (window.scrollY > 100) {
+                selectHeader.classList.add('header-scrolled')
+            } else {
+                selectHeader.classList.remove('header-scrolled')
+            }
+        }
+        window.addEventListener('load', headerScrolled)
+        onscroll(document, headerScrolled)
+    }
+
+    /**
+     * Back to top button
+     */
+    let backtotop = select('.back-to-top')
+    if (backtotop) {
+        const toggleBacktotop = () => {
+            if (window.scrollY > 100) {
+                backtotop.classList.add('active')
+            } else {
+                backtotop.classList.remove('active')
+            }
+        }
+        window.addEventListener('load', toggleBacktotop)
+        onscroll(document, toggleBacktotop)
+    }
+
+    /**
+     * Mobile nav toggle
+     */
+    on('click', '.mobile-nav-toggle', function (e) {
+        select('#navbar').classList.toggle('navbar-mobile')
+        this.classList.toggle('bi-list')
+        this.classList.toggle('bi-x')
     })
-  }
 
-  /**
-   * Toggle .header-scrolled class to #header when page is scrolled
-   */
-  let selectHeader = select('#header')
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled')
-      } else {
-        selectHeader.classList.remove('header-scrolled')
-      }
-    }
-    window.addEventListener('load', headerScrolled)
-    onscroll(document, headerScrolled)
-  }
+    /**
+     * Mobile nav dropdowns activate
+     */
+    on('click', '.navbar .dropdown > a', function (e) {
+        if (select('#navbar').classList.contains('navbar-mobile')) {
+            e.preventDefault()
+            this.nextElementSibling.classList.toggle('dropdown-active')
+        }
+    }, true)
 
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
-  }
+    /**
+     * Scrool with ofset on links with a class name .scrollto
+     */
+    on('click', '.scrollto', function (e) {
+        if (select(this.hash)) {
+            e.preventDefault()
 
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
+            let navbar = select('#navbar')
+            if (navbar.classList.contains('navbar-mobile')) {
+                navbar.classList.remove('navbar-mobile')
+                let navbarToggle = select('.mobile-nav-toggle')
+                navbarToggle.classList.toggle('bi-list')
+                navbarToggle.classList.toggle('bi-x')
+            }
+            scrollto(this.hash)
+        }
+    }, true)
 
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
-    }
-  }, true)
+    /**
+     * Scroll with ofset on page load with hash links in the url
+     */
+    window.addEventListener('load', () => {
+        if (window.location.hash) {
+            if (select(window.location.hash)) {
+                scrollto(window.location.hash)
+            }
+        }
+    });
 
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
+    /**
+     * Initiate glightbox
+     */
+    const glightbox = GLightbox({
+        selector: '.glightbox'
+    });
 
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
-    }
-  }, true)
+    /**
+     * Gallery Slider
+     */
+    new Swiper('.gallery-slider', {
+        speed: 400,
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+        },
+        slidesPerView: 'auto',
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            575: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            992: {
+                slidesPerView: 5,
+                spaceBetween: 20
+            }
+        }
+    });
 
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
-  window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash)
-      }
-    }
-  });
+    /**
+     * Initiate gallery lightbox
+     */
+    const galleryLightbox = GLightbox({
+        selector: '.gallery-lightbox'
+    });
 
-  /**
-   * Initiate glightbox
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
-
-  /**
-   * Gallery Slider
-   */
-  new Swiper('.gallery-slider', {
-    speed: 400,
-    loop: true,
-    centeredSlides: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
-      575: {
-        slidesPerView: 2,
-        spaceBetween: 20
-      },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      },
-      992: {
-        slidesPerView: 5,
-        spaceBetween: 20
-      }
-    }
-  });
-
-  /**
-   * Initiate gallery lightbox 
-   */
-  const galleryLightbox = GLightbox({
-    selector: '.gallery-lightbox'
-  });
-
-  /**
-   * Buy tickets select the ticket type on click
-   */
-  on('show.bs.modal', '#buy-ticket-modal', function(event) {
-    select('#buy-ticket-modal #ticket-type').value = event.relatedTarget.getAttribute('data-ticket-type')
-  })
-
-  /**
-   * Animation on scroll
-   */
-  window.addEventListener('load', () => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
+    /**
+     * Buy tickets select the ticket type on click
+     */
+    on('show.bs.modal', '#buy-ticket-modal', function (event) {
+        select('#buy-ticket-modal #ticket-type').value = event.relatedTarget.getAttribute('data-ticket-type')
     })
-  });
 
-  // test
+    /**
+     * Animation on scroll
+     */
+    window.addEventListener('load', () => {
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        })
+    });
+
+    // test
 
 
-
-  /* --------------------------
-   * GLOBAL VARS
-   * -------------------------- */
+    /* --------------------------
+     * GLOBAL VARS
+     * -------------------------- */
 // The date you want to count down to
-  var targetDate = new Date("2021/07/21 00:00:00");
+    var targetDate = new Date("2021/07/21 00:00:00");
 
 // Other date related variables
-  var days;
-  var hrs;
-  var min;
-  var sec;
+    var days;
+    var hrs;
+    var min;
+    var sec;
 
-  /* --------------------------
-   * ON DOCUMENT LOAD
-   * -------------------------- */
-  $(function() {
-    // Calculate time until launch date
-    timeToLaunch();
-    // Transition the current countdown from 0
-    numberTransition('#days .number', days, 1000, 'easeOutQuad');
-    numberTransition('#hours .number', hrs, 1000, 'easeOutQuad');
-    numberTransition('#minutes .number', min, 1000, 'easeOutQuad');
-    numberTransition('#seconds .number', sec, 1000, 'easeOutQuad');
-    // Begin Countdown
-    setTimeout(countDownTimer,1001);
-  });
-
-  /* --------------------------
-   * FIGURE OUT THE AMOUNT OF
-     TIME LEFT BEFORE LAUNCH
-   * -------------------------- */
-  function timeToLaunch(){
-    // Get the current date
-    var currentDate = new Date();
-
-    // Find the difference between dates
-    var diff = (currentDate - targetDate)/1000;
-    var diff = Math.abs(Math.floor(diff));
-
-    // Check number of days until target
-    days = Math.floor(diff/(24*60*60));
-    sec = diff - days * 24*60*60;
-
-    // Check number of hours until target
-    hrs = Math.floor(sec/(60*60));
-    sec = sec - hrs * 60*60;
-
-    // Check number of minutes until target
-    min = Math.floor(sec/(60));
-    sec = sec - min * 60;
-  }
-
-  /* --------------------------
-   * DISPLAY THE CURRENT
-     COUNT TO LAUNCH
-   * -------------------------- */
-  function countDownTimer(){
-
-    // Figure out the time to launch
-    timeToLaunch();
-
-    // Write to countdown component
-    $( "#days .number" ).text(days);
-    $( "#hours .number" ).text(hrs);
-    $( "#minutes .number" ).text(min);
-    $( "#seconds .number" ).text(sec);
-
-    // Repeat the check every second
-    setTimeout(countDownTimer,1000);
-  }
-
-  /* --------------------------
-   * TRANSITION NUMBERS FROM 0
-     TO CURRENT TIME UNTIL LAUNCH
-   * -------------------------- */
-  function numberTransition(id, endPoint, transitionDuration, transitionEase){
-    // Transition numbers from 0 to the final number
-    $({numberCount: $(id).text()}).animate({numberCount: endPoint}, {
-      duration: transitionDuration,
-      easing:transitionEase,
-      step: function() {
-        $(id).text(Math.floor(this.numberCount));
-      },
-      complete: function() {
-        $(id).text(this.numberCount);
-      }
+    /* --------------------------
+     * ON DOCUMENT LOAD
+     * -------------------------- */
+    $(function () {
+        // Calculate time until launch date
+        timeToLaunch();
+        // Transition the current countdown from 0
+        numberTransition('#days .number', days, 1000, 'easeOutQuad');
+        numberTransition('#hours .number', hrs, 1000, 'easeOutQuad');
+        numberTransition('#minutes .number', min, 1000, 'easeOutQuad');
+        numberTransition('#seconds .number', sec, 1000, 'easeOutQuad');
+        // Begin Countdown
+        setTimeout(countDownTimer, 1001);
     });
-  };
+
+    /* --------------------------
+     * FIGURE OUT THE AMOUNT OF
+       TIME LEFT BEFORE LAUNCH
+     * -------------------------- */
+    function timeToLaunch() {
+        // Get the current date
+        var currentDate = new Date();
+
+        // Find the difference between dates
+        var diff = (currentDate - targetDate) / 1000;
+        var diff = Math.abs(Math.floor(diff));
+
+        // Check number of days until target
+        days = Math.floor(diff / (24 * 60 * 60));
+        sec = diff - days * 24 * 60 * 60;
+
+        // Check number of hours until target
+        hrs = Math.floor(sec / (60 * 60));
+        sec = sec - hrs * 60 * 60;
+
+        // Check number of minutes until target
+        min = Math.floor(sec / (60));
+        sec = sec - min * 60;
+    }
+
+    /* --------------------------
+     * DISPLAY THE CURRENT
+       COUNT TO LAUNCH
+     * -------------------------- */
+    function countDownTimer() {
+
+        // Figure out the time to launch
+        timeToLaunch();
+
+        // Write to countdown component
+        $("#days .number").text(days);
+        $("#hours .number").text(hrs);
+        $("#minutes .number").text(min);
+        $("#seconds .number").text(sec);
+
+        // Repeat the check every second
+        setTimeout(countDownTimer, 1000);
+    }
+
+    /* --------------------------
+     * TRANSITION NUMBERS FROM 0
+       TO CURRENT TIME UNTIL LAUNCH
+     * -------------------------- */
+    function numberTransition(id, endPoint, transitionDuration, transitionEase) {
+        // Transition numbers from 0 to the final number
+        $({numberCount: $(id).text()}).animate({numberCount: endPoint}, {
+            duration: transitionDuration,
+            easing: transitionEase,
+            step: function () {
+                $(id).text(Math.floor(this.numberCount));
+            },
+            complete: function () {
+                $(id).text(this.numberCount);
+            }
+        });
+    };
 
 
 })()
+
+
