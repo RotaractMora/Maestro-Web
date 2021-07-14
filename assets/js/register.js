@@ -22,7 +22,6 @@ subButton.addEventListener("click",ev =>{
 
     document.getElementById("loading").style.display = 'block';
     document.getElementById("error-message").style.display = 'none';
-    document.getElementById("error-message").innerHTML = "";
 
 
 
@@ -75,6 +74,7 @@ subButton.addEventListener("click",ev =>{
             mem_4_phone: mem_4_phone
 
         }).then(() => {
+            document.getElementById("error-message").style.display = 'none';
             document.getElementById("loading").style.display = 'none';
             console.log("data saved")
             document.querySelector('.sent-message').style.display = 'block';
