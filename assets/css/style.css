@@ -1697,7 +1697,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .timeline {
   position: relative;
-  width: 741px;
+  width: 854px;
   margin: 0 auto;
   margin-top: 20px;
   padding: 1em 0;
@@ -1738,7 +1738,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .direction-l {
   position: relative;
-  width: 341px;
+  width: 397px;
   float: left;
   text-align: right;
 }
@@ -1746,7 +1746,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .direction-r {
   position: relative;
-  width: 341px;
+  width: 397px;
   float: right;
 }
 
@@ -1763,7 +1763,7 @@ h1, h2, h3, h4, h5, h6 {
   background: rgb(248,248,248);
   padding: 6px 10px;
   border-radius: 5px;
-  font-size: 17px;
+  font-size: 25px;
   font-weight: 600;
   text-align: left;
 }
@@ -1848,7 +1848,7 @@ h1, h2, h3, h4, h5, h6 {
 .time {
   display: inline-block;
   padding: 4px 6px;
-  background: rgb(248,248,248);
+  /*background: rgb(248,248,248);*/
 }
 
 .desc {
