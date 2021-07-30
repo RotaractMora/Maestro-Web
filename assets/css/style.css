@@ -2180,3 +2180,139 @@ ul#countdown li .label {
     font-size: 40px;
   }
 }
+
+
+/* card type why maestro */
+
+
+
+.card {
+  position: relaive;
+  top: 50%;
+
+  width: 1100px;
+  height: 100px;
+  margin-left: -400px;
+  float: left;
+  perspective: 500px;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .content {
+  transform: rotateX( 180deg ) ;
+  transition: transform 0.5s;
+}
+
+.front{
+  padding: 8px;
+  background-color: none;
+  font-size: 20px;
+
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  line-height: 30px;
+  color: #03446A;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.back {
+  background: #03446A;
+  color: white;
+  transform: rotateX( 180deg );
+  font-size: 20px;
+  padding: 20px;
+}
+
+.div{
+  /* padding-top:5px; */
+  margin-top:30px;
+ /* padding: 100px; */
+  margin-left: 40%;
+  height: 40px;
+}
+
+/* .why-maestro-card{
+  padding-top: 150px;
+} */
+
+.why-maestro-card{
+  margin-bottom: 300px;
+}
+
+.front .fa{
+  position: relative;
+  font-size: 50px;
+}
+
+@media screen and (max-width: 860px){
+  .card{
+    width: 600px;
+    margin-left: -200px;
+  }
+  .front .fa{
+    position: relative;
+    font-size: 30px;
+  }
+  .back{
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .card{
+    width: 500px;
+    height: 120px;
+    margin-left: -180px;
+  }
+  .front .fa{
+    position: relative;
+    font-size: 30px;
+  }
+  .back{
+    font-size: 15px;
+  }
+  .div{
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .card{
+    width: 300px;
+    height: 150px;
+    margin-left: -100px;
+  }
+  .front .fa{
+    position: relative;
+    font-size: 30px;
+  }
+  .back{
+    font-size: 15px;
+  }
+  .div{
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  .why-maestro-card{
+    margin-bottom: 400px;
+    padding-bottom: 50px;
+  }
+}
