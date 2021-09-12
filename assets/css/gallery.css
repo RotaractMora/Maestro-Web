@@ -1,5 +1,5 @@
 .header{
-	background-color:white;
+	background-color:#040919;
 }
 
 .lheader{
@@ -16,7 +16,7 @@
 
 *{
 	box-sizing: border-box;
-	background-color:#040919;
+	/* 	 */
 	
 }
 
@@ -57,20 +57,57 @@ body{
 	margin-bottom: 15px;
 	width: 100%;
 	cursor: pointer;
-	filter: grayscale(1);
-}
-img:hover{
+	filter: grayscale(0.5) blur(.5px);
 	
-	filter: grayscale(0);
+}
+.vertical img:hover{
+	
+	filter: grayscale(0) blur(0);
 	transition: 0.5s;
+	
 }
 @media(max-width: 720px){
 	.vertical{
 	width: 50%;
 	}
+
+	.vertical img{
+	
+		
+		filter: grayscale(0) blur(0);
+		
+	}
+
+	.footer-top{
+		visibility: hidden;
+	}
 }
 
 div.header{
 	padding-top:100px;
+}
+
+.gallery-header{
+	background-color:#040919;
+	width:100%;
+	margin: top 100px;
+}
+
+.headsec{
+	margin-top:100px;
+	padding: 50px;
+	background-color:#040919;
+	color:#fff;
+}
+
+/* #footer{
+	
+	margin-top:100px;
+	padding-top: 100px;
+	
+} */
+
+.seperater{
+	width:5000px;
 }
 
